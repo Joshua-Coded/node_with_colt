@@ -1,0 +1,3 @@
+const math = require("./math");
+console.log(math.pI);
+console.log(math.square(10));
