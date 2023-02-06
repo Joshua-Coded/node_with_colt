@@ -1,0 +1,15 @@
+{
+  "name": "lang_guesser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lan_guesser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "franc": "^6.1.0"
+  }
+}
