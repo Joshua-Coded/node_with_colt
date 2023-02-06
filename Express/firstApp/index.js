@@ -11,6 +11,12 @@ app.get('/', (req, res) => {
     res.send("<h1>Welcome to our pets home</h1>")
 })
 
+app.get("/r/:subreddit", (req, res) => {
+    const {subreddit} = req.params;
+    res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`)
+})
+
+
 app.post('/cats', (req, res) => { 
     res.send("<h1>POST REQUEST TO CATS ROUTE");
  })
