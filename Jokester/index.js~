@@ -1,0 +1,8 @@
+const jokes = require("give-me-a-joke")
+
+jokes.getRandomJoke(function (joke) {
+
+    console.log(jokes)
+})
+
+
