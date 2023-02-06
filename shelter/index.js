@@ -3,4 +3,6 @@ const joshua = require("./joshua")
 const sadie = require("./sadie")
 
 const allCats = [blue, sadie, joshua]
-console.log(allCats)
+
+
+module.exports = allCats;
