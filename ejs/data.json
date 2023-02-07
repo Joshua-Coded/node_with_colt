@@ -1,0 +1,63 @@
+{
+    "soccer": {
+        "name": "Soccer",
+        "subscribers": 65736473,
+        "description": "the footbal subscribers. news, result and discussion",
+        "posts": [
+            {
+                "title": " Marteens de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua alana"
+            },
+            {
+                "title": " joshua de room to  make  pizza formore ubfdu 100000",
+                "author": " alana"
+            },
+            {
+                "title": " alanalna de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua "
+            }
+        ]
+    },
+
+    "tennis": {
+        "name": "Tennis",
+        "subscribers": 7348736473,
+        "description": "the tennnis subscribers. news, result and discussion",
+        "posts": [
+            {
+                "title": " Marteens de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua alana"
+            },
+            {
+                "title": " joshua de room to  make  pizza formore ubfdu 100000",
+                "author": " alana"
+            },
+            {
+                "title": " alanalna de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua "
+            }
+        ]
+    },
+
+    "cricket": {
+        "name": "Cricket",
+        "subscribers": 3083094,
+        "description": "the cricket subscribers. news, result and discussion",
+        "posts": [
+            {
+                "title": " Marteens de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua alana",
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3HR06FaSV5zV1yZ1REoOVaaK4fcDCpDHerivGgIPIaQ&s"
+            },
+            {
+                "title": " joshua de room to  make  pizza formore ubfdu 100000",
+                "author": " alana",
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6zhT7I7LuGBd0oxLplr9SHiuq2srSZHGfzsB_831AAg&s"
+            },
+            {
+                "title": " alanalna de room to  make  pizza formore ubfdu 100000",
+                "author": "Joshua "
+            }
+        ]
+    }
+}
