@@ -10,6 +10,13 @@ app.get("/", (req, res) => {
     res.render("home")
 })
 
+app.get("/cats", (req, res) => {
+    const cats = [
+        'Blue', 'Red', 'Green', 'Yellow', 'monty', 'winston'
+    ]
+    res.render("cats", { cats })
+})
+
 app.get("/r/:subreddit", (req, res) => {
     const {subreddit} = req.params;
     res.render("subreddit", {subreddit});
