@@ -34,7 +34,7 @@ const comments = [
 ]
 
 app.get("/comments", (req, res) => {
-    res.render("comments/index");
+    res.render("comments/app", { comments });
 })
 
 app.get("/tacos", (req, res)  =>{
