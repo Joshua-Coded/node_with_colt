@@ -37,19 +37,20 @@ app.get("/comments", (req, res) => {
     res.render("comments/app", { comments });
 })
 
-app.get("/tacos", (req, res)  =>{
-       res.send("GET /tacos response")
+
+app.get("/comments/new", (req, res) => {
+    res.render("comments/new");
 })
 
 
-app.post("/tacos", (req, res)  =>{
-    console.log(req.body)
-    res.send("GET /tacos response")
-})
+app.post("/comments/new", (req, res) => {
+    // console.log(req.body);
+    const {username, comment} = req.body;
+    comments.push({username, comment})
+    res.send("IT'S WORKED")
+});
 
-app.get("/tacos", (req, res) => {
-    res.send("POST /tacos response")
-})
+
 app.listen(3000, () => {
     console.log("listening on port 3000@@@!")
 });
