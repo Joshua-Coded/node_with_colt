@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
 const { v4: uuid } = require('uuid');
 
 
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(methodOverride('__method'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -55,13 +57,8 @@ app.post("/comments/", (req, res) => {
     res.redirect("/comments");
 });
 
-app.get("/comments/:id", (req, res) => {
-const { id } = req.params;
-const comment = comments.find(c => c.id === id)
-res.render("comments/show", { comment })
-})
-
 app.get("/comments/:id/edit", (req, res) => {
+    const { id } = req.params;
     const comment = comments.find(c => c.id === id)
     res.render("comments/edit", {comment})
 })
