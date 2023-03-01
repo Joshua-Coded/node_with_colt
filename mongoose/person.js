@@ -20,4 +20,15 @@ personSchema.virtual('fullName').get(function () {
     return `${this.first} - ${this.last}`
 })
 
+// middleware
+personSchema.pre('save', async function(){
+    this.first = 'YO';
+    this.last = 'Mama';
+    console.log('About to save!!!')
+})
+
+personSchema.post('save', async function(){
+    console.log('Just saved!!!')
+});
+
 const Person = mongoose.model('Person', personSchema)
