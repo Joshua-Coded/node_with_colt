@@ -18,8 +18,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // routes
-app.get('/', (req, res) => {
-    res.send("Woof!");
+app.get('/products', async (req, res) => {
+    const products = await Product.find({})
+    console.log(products);
+    res.send("ALL PRODUCTS WILL BE HERE");
 })
 
 
