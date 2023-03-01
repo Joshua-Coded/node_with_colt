@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'))
 
 const Product = require('./models/productModels');
 
@@ -39,15 +41,6 @@ app.post("/products", async (req, res) => {
         res.redirect(`/products/${product._id}`);
 });
 
-// app.post("/products", async (req, res) => {
-//     const newProduct = new Product(req.body);
-//     await newProduct.save();
-//     console.log(newProduct);
-//     res.send("making new product");
-// })
-
-
-
 app.get('/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -61,10 +54,24 @@ app.get('/products/:id', async (req, res) => {
     }
 })
 
+app.get("/products/:id/edit", async (req, res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.render("products/edit", {product})
+})
 
-
-
-
+app.put('/products/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true});
+        if (!product) {
+            return res.status(404).send('cannot edit product');
+        }
+        res.redirect(`/products/${product._id}`)
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+})
 
 app.listen(4000, () => {
     console.log('listening on port 40000!!');
