@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-// Schema declarations
-
 const productSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     name: {
         type: String,
         required: true
@@ -19,7 +18,11 @@ const productSchema = new mongoose.Schema({
     }
 })
 
-// compile the model
+// Generate a unique _id field for each document
+productSchema.pre('save', function(next) {
+    this._id = new mongoose.Types.ObjectId();
+    next();
+  })
 
 const Product = mongoose.model('Product', productSchema);
 
