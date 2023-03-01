@@ -61,19 +61,6 @@ app.get("/comments/:id/edit", (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id)
     res.render("comments/edit", {comment})
+
 })
-
-app.patch("/comments/:id", (req, res) => {
-    const { id } = req.params;
-    const newCommentText = req.body.comment;
-    const foundComment = comments.find(c => c.id === id);
-    foundComment.comment = newCommentText;
-    res.redirect("/comments")
-})
-
-app.listen(3000, () => {
-    console.log("listening on port 3000@@@!")
-});
-
-
 
