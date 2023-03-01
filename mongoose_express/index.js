@@ -3,7 +3,9 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopApp', {useNewUrlParser: true})
+const Product = require('./models/productModels');
+
+mongoose.connect('mongodb://localhost:27017/farmStand', {useNewUrlParser: true})
 .then(() => {
     console.log('Connection open');
 })
