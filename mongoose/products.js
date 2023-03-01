@@ -41,14 +41,24 @@ const ProductSchema = new mongoose.Schema({
 
 const Product = mongoose.model('Product', ProductSchema);
 
-const bike =new Product({name: "MOuntaun bike", price: 34343, categories: ["cycling", "safety"]})
-bike.save()
-.then((data) => {
-console.log("Item saved successfully!!")
-console.log(data)
+// const bike =new Product({name: "Tire Pump", price: 34.3, categories: ["cycling"]})
+// bike.save()
+// .then((data) => {
+// console.log("Item saved successfully!!")
+// console.log(data)
+// })
+// .catch((err) => {
+// console.log("OHH NOOO ERRORS")
+// console.log(err)
+
+// })
+
+Product.findOneAndUpdate({name: "Tire Pump"}, {price: -199}, {new: true, runValidators: true})
+.then((d) => {
+    console.log("it worked")
+    console.log(d)
 })
 .catch((err) => {
-console.log("OHH NOOO ERRORS")
-console.log(err)
-
+    console.log("Oh no Error")
+    console.log(err)
 })
